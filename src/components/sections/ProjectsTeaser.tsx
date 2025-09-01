@@ -4,13 +4,14 @@ import Section from "@/components/ui/Section";
 import { useI18n } from "@/i18n";
 import { projects } from "@/data/projects";
 import Tag from "@/components/ui/Tag";
+import Link from "next/link";
 
 const ProjectsTeaser: React.FC = () => {
   const { t } = useI18n();
   const { locale } = useI18n();
   const list = projects.slice(0, 3); // teaser subset (later: smarter selection)
   return (
-    <Section id="projects" title={t("projectTeaserTitle")}>      
+  <Section id="projects" title={t("projectTeaserTitle")}>     
       <ul className="space-y-4">
         {list.map((p) => (
           <li key={p.slug} className="rounded-lg border border-[hsl(var(--border))] p-4 flex flex-col gap-1 bg-[hsl(var(--card))]">
@@ -36,6 +37,11 @@ const ProjectsTeaser: React.FC = () => {
           </li>
         ))}
       </ul>
+      <div className="pt-4">
+        <Link href="/projects" className="text-sm font-medium text-[hsl(var(--primary))] hover:underline">
+          {locale === 'en' ? 'View all projects' : 'Ver todos los proyectos'} →
+        </Link>
+      </div>
     </Section>
   );
 };
