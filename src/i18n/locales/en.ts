@@ -3,7 +3,7 @@ export const en = {
     heroSubtitle: "Python, REST, databases and a touch of AI.",
     viewProjects: "View projects",
     downloadCV: "Download CV",
-    socialFooter: "Built with Next.js, Tailwind and too much coffee.",
+    socialFooter: "Built with Next.js, Tailwind and mate 🧉.",
     techBarLabel: "Core stack",
     whatIBuild: "What I build",
     projects: "Projects",
