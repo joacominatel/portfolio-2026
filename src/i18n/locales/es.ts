@@ -23,7 +23,11 @@ export const es = {
     restfulDetailIntro: "Diseño y desarrollo APIs REST claras, confiables y fáciles de evolucionar.",
     restfulDetailBody: `Me gusta trabajar con APIs bien pensadas: recursos definidos con lógica, versionado ordenado y documentación OpenAPI que siempre refleja la realidad del proyecto. La idea es que cualquier persona que consuma la API tenga una experiencia predecible, sin sorpresas.
 
-La calidad la aseguro con pruebas de contrato, integración y carga, cuidando que cada cambio mantenga la estabilidad. Prefiero la simplicidad: menos endpoints pero mejor diseñados, más fáciles de mantener y escalar. Si buscás alguien que te dé una base backend sólida y transparente, podemos trabajar juntos.`
+La calidad la aseguro con pruebas de contrato, integración y carga, cuidando que cada cambio mantenga la estabilidad. Prefiero la simplicidad: menos endpoints pero mejor diseñados, más fáciles de mantener y escalar. Si buscás alguien que te dé una base backend sólida y transparente, podemos trabajar juntos.` ,
+    backToProjects: "Volver a proyectos",
+    tagsLabel: "Tags",
+    statusDeveloping: "En desarrollo",
+    statusActive: "Activo"
 };
 
 export type EsKeys = keyof typeof es;
