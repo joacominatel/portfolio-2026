@@ -9,13 +9,13 @@ export const Footer: React.FC = () => {
     <footer className="mt-16 border-t border-[hsl(var(--border))] py-8 text-sm">
       <div className="max-w-[52rem] mx-auto px-6 sm:px-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex gap-4">
-          <Link href="#skills" className="hover:text-[hsl(var(--primary))] transition-colors">
+          <Link href="/#skills" className="hover:text-[hsl(var(--primary))] transition-colors">
             {t("skills")}
           </Link>
-          <Link href="#projects" className="hover:text-[hsl(var(--primary))] transition-colors">
+          <Link href="/#projects" className="hover:text-[hsl(var(--primary))] transition-colors">
             {t("projects")}
           </Link>
-          <Link href="#contact" className="hover:text-[hsl(var(--primary))] transition-colors">
+          <Link href="/#contact" className="hover:text-[hsl(var(--primary))] transition-colors">
             {t("contact")}
           </Link>
         </div>
