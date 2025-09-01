@@ -10,11 +10,11 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Joaquín Minatel | Backend Developer",
   description: "Backend developer. Clear APIs, reliable data. Python, REST, data workflows and a touch of AI.",
-  metadataBase: new URL("https://example.com"),
+  metadataBase: new URL("https://fronterait.tech"),
   openGraph: {
     title: "Joaquín Minatel | Backend Developer",
     description: "Backend developer. Clear APIs, reliable data.",
-    url: "https://example.com",
+    url: "https://fronterait.tech",
     siteName: "Joaquín Minatel Portfolio",
     locale: "en_US",
     type: "website",
