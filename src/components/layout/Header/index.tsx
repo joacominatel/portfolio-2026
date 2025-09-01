@@ -1,9 +1,8 @@
 "use client";
 import React from "react";
-import { LanguageToggle } from "./LanguageToggle";
-import { ThemeToggle } from "./ThemeToggle";
-import { useI18n } from "../utils/i18n";
-import { cn } from "../utils/cn";
+import { LanguageToggle } from "../../ui/LanguageToggle";
+import { ThemeToggle } from "../../ui/ThemeToggle";
+import { useI18n } from "@/i18n";
 import Link from "next/link";
 
 export const Header: React.FC = () => {
@@ -23,9 +22,7 @@ export const Header: React.FC = () => {
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  className={cn(
-                    "hover:text-[hsl(var(--primary))] transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[hsl(var(--primary))] rounded-sm px-1"
-                  )}
+                  className="hover:text-[hsl(var(--primary))] transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[hsl(var(--primary))] rounded-sm px-1"
                 >
                   {l.label}
                 </Link>
@@ -41,3 +38,5 @@ export const Header: React.FC = () => {
     </header>
   );
 };
+
+export default Header;

@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { useI18n } from "../utils/i18n";
+import { useI18n } from "@/i18n";
 import Link from "next/link";
 
 export const Footer: React.FC = () => {
@@ -19,8 +19,10 @@ export const Footer: React.FC = () => {
             {t("contact")}
           </Link>
         </div>
-        <div className="text-muted-foreground opacity-80">{t("socialFooter")}</div>
+        <div className="opacity-80">{t("socialFooter")}</div>
       </div>
     </footer>
   );
 };
+
+export default Footer;
