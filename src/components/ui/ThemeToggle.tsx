@@ -1,19 +1,12 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { applyTheme, getInitialTheme, type Theme } from "../utils/theme";
+import { applyTheme, getInitialTheme, type Theme } from "@/utils/theme";
 
 export const ThemeToggle: React.FC = () => {
   const [theme, setTheme] = useState<Theme>("light");
-  useEffect(() => {
-    setTheme(getInitialTheme());
-  }, []);
-
-  useEffect(() => {
-    applyTheme(theme);
-  }, [theme]);
-
+  useEffect(() => { setTheme(getInitialTheme()); }, []);
+  useEffect(() => { applyTheme(theme); }, [theme]);
   const toggle = () => setTheme(theme === "light" ? "dark" : "light");
-
   return (
     <button
       type="button"
@@ -25,3 +18,5 @@ export const ThemeToggle: React.FC = () => {
     </button>
   );
 };
+
+export default ThemeToggle;

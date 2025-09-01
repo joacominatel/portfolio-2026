@@ -1,5 +1,5 @@
 import React from "react";
-import { cn } from "../utils/cn";
+import { cn } from "@/utils/cn";
 
 export const Badge: React.FC<React.HTMLAttributes<HTMLSpanElement>> = ({ className, ...props }) => (
   <span
@@ -10,3 +10,5 @@ export const Badge: React.FC<React.HTMLAttributes<HTMLSpanElement>> = ({ classNa
     {...props}
   />
 );
+
+export default Badge;
