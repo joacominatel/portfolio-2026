@@ -9,12 +9,28 @@ export const en = {
     projects: "Projects",
     skills: "Skills",
     contact: "Contact",
-    deterministicEngine: "Deterministic Game Engine",
-    deterministicDesc: "FSM focus, reproducibility & logs.",
+    aboutMe: "About me",
+    aboutMeDesc: "Backend dev (Python) – APIs, data & smart tooling.",
     restfulApis: "Well documented RESTful APIs",
     restfulDesc: "OpenAPI, versioning & testing.",
     dataAutomation: "Data & Automation",
     dataAutomationDesc: "ETL, workers, queues, observability.",
+    dataAutomationDetailTitle: "Data & Automation",
+    dataAutomationDetailIntro: "Tools and approaches I enjoy when building data-driven and automated backends.",
+    dataAutomationDetailBody: `I like mixing pragmatic tooling with modern runtimes. Python stays at the core (FastAPI, async workers) for expressiveness, while I complement with Go or Node when concurrency or streaming patterns demand tighter control.
+
+For data orchestration and pipelines: plain queues (Redis / SQS) plus lightweight schedulers beat over-engineered DAG monsters most of the time. I lean on SQL (Postgres / MySQL / analytical extensions) for truth, and use Redis or in‑memory caches only where latency truly matters.
+
+Observability matters early: structured logs, trace ids that flow across tasks, and small metrics (p95 latency, queue depth) give fast feedback loops. I prototype with Docker Compose, then push to containers on cloud (Azure / AWS) using IaC templates.
+
+AI integration: I like using LLMs to augment extraction, validation or summarization steps—never as an opaque black box. Guardrails + deterministic fallbacks keep pipelines stable.
+
+I keep things simple: fewer moving parts, clear contracts, documented behaviors, reproducible local runs.` ,
+    aboutMeBody: `Hi, I'm Joaquin (Joaco), a backend developer focused on Python and the craft of clear REST APIs, robust data flows and AI-assisted features. I enjoy turning loosely defined problems into concise architectures: small services with explicit boundaries, predictable performance and solid observability.
+
+I favour simple, composable designs over fashionable complexity—versioned endpoints, typed contracts, repeatable pipelines, meaningful tests. I collaborate with teams or solo on freelance projects, bringing documentation, clean commits, CI testing and iterative delivery.
+
+If you need someone to design or reinforce a backend foundation (APIs, data processing, automation, AI integration) with maintainable quality, let's talk.`,
     seeMore: "see more",
     projectTeaserTitle: "Highlighted projects",
     finalCTAText: "Open for freelance & collaborations.",
