@@ -28,6 +28,12 @@ Quality is ensured through contract, integration, and load testing, making sure 
     tagsLabel: "Tags",
     statusDeveloping: "Developing",
     statusActive: "Active"
+    ,experienceTitle: "Experience"
+    ,present: "Present"
+    ,achievementsLabel: "Achievements"
+    ,internalProjectsLabel: "Internal projects"
+    ,showMore: "Show more"
+    ,showLess: "Show less"
 };
 
 export type EnKeys = keyof typeof en;

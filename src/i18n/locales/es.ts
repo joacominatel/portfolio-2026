@@ -28,6 +28,12 @@ La calidad la aseguro con pruebas de contrato, integración y carga, cuidando qu
     tagsLabel: "Tags",
     statusDeveloping: "En desarrollo",
     statusActive: "Activo"
+    ,experienceTitle: "Experiencia"
+    ,present: "Actualidad"
+    ,achievementsLabel: "Logros"
+    ,internalProjectsLabel: "Proyectos internos"
+    ,showMore: "Ver más"
+    ,showLess: "Ver menos"
 };
 
 export type EsKeys = keyof typeof es;
