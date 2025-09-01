@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
           <Link href="/#skills" className="hover:text-[hsl(var(--primary))] transition-colors">
             {t("skills")}
           </Link>
-          <Link href="/#projects" className="hover:text-[hsl(var(--primary))] transition-colors">
+          <Link href="/projects" className="hover:text-[hsl(var(--primary))] transition-colors">
             {t("projects")}
           </Link>
           <Link href="/#contact" className="hover:text-[hsl(var(--primary))] transition-colors">
