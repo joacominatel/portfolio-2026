@@ -9,9 +9,9 @@ const WhatIBuild: React.FC = () => {
   return (
     <Section id="skills" title={t("whatIBuild")}>      
       <div className="grid gap-5 sm:grid-cols-3">
-        <Card title={t("deterministicEngine")} description={t("deterministicDesc")} />
+  <Card title={t("aboutMe")} description={t("aboutMeDesc")} href="/work/about" />
         <Card title={t("restfulApis")} description={t("restfulDesc")} href="/work/restful-apis" />
-        <Card title={t("dataAutomation")} description={t("dataAutomationDesc")} />
+  <Card title={t("dataAutomation")} description={t("dataAutomationDesc")} href="/work/data-automation" />
       </div>
     </Section>
   );
