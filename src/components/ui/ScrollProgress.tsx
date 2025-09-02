@@ -20,6 +20,7 @@ export const ScrollProgress = () => {
   return (
     <div
       className="fixed top-0 left-0 h-1 bg-[hsl(var(--primary))] z-50 transition-[width]"
+      aria-hidden="true"
       style={{ width: `${progress}%` }}
     />
   );
