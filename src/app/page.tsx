@@ -1,8 +1,9 @@
-import Hero from "@/components/sections/Hero";
-import WhatIBuild from "@/components/sections/WhatIBuild";
+import CaseStudies from "@/components/sections/CaseStudies";
 import ExperienceTimeline from "@/components/sections/ExperienceTimeline";
-import ProjectsTeaser from "@/components/sections/ProjectsTeaser";
 import FinalCTA from "@/components/sections/FinalCTA";
+import Hero from "@/components/sections/Hero";
+import ProjectsTeaser from "@/components/sections/ProjectsTeaser";
+import WhatIBuild from "@/components/sections/WhatIBuild";
 import { Container } from "@/components/ui/Container";
 
 export default function Home() {
@@ -10,10 +11,10 @@ export default function Home() {
     <Container className="py-16 space-y-24">
       <Hero />
       <WhatIBuild />
-  <ExperienceTimeline />
-  <ProjectsTeaser />
+      <ExperienceTimeline />
+      <ProjectsTeaser />
+      <CaseStudies />
       <FinalCTA />
     </Container>
   );
 }
-

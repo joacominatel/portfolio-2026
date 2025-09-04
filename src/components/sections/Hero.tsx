@@ -30,8 +30,8 @@ const Hero = () => {
           {t("heroSubtitle")}
         </p>
         <CTAButtons
-          primary={{ label: t("viewProjects"), href: "/projects" }}
-          secondary={{ label: t("downloadCV"), href: "/cv.pdf" }}
+          primary={{ label: t("hireMe"), href: "/#contact" }}
+          secondary={{ label: t("viewCaseStudies"), href: "/#case-studies" }}
         />
       </div>
       <section

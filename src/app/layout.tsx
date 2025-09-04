@@ -11,13 +11,14 @@ import { LanguageProvider } from "@/i18n";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Joaquín Minatel | Backend Developer",
+  title: "Joaquín Minatel | Backend to production in days",
   description:
-    "Backend developer. Clear APIs, reliable data. Python, REST, data workflows and a touch of AI.",
+    "Secure APIs, Postgres and deploys. UTC−3, availability 30+ h/week.",
   metadataBase: new URL("https://fronterait.tech"),
   openGraph: {
-    title: "Joaquín Minatel | Backend Developer",
-    description: "Backend developer. Clear APIs, reliable data.",
+    title: "Joaquín Minatel | Backend to production in days",
+    description:
+      "Secure APIs, Postgres and deploys. UTC−3, availability 30+ h/week.",
     url: "https://fronterait.tech",
     siteName: "Joaquín Minatel Portfolio",
     locale: "en_US",
