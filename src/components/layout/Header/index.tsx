@@ -7,7 +7,7 @@ import { LanguageToggle } from "../../ui/LanguageToggle";
 import { ThemeToggle } from "../../ui/ThemeToggle";
 
 export const Header: React.FC = () => {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const links = [
     { href: "/#skills", label: t("skills"), key: "skills" },
     { href: "/projects", label: t("projects"), key: "projects" },
@@ -67,7 +67,22 @@ export const Header: React.FC = () => {
             })}
           </ul>
         </nav>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-4">
+          <a
+            href={locale === "es" ? "/cv.pdf" : "/cv_english.pdf"}
+            download
+            className="text-sm hover:text-[hsl(var(--primary))] transition-colors"
+          >
+            {t("downloadCV")}
+          </a>
+          <a
+            href="https://github.com/joacominatel"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm hover:text-[hsl(var(--primary))] transition-colors"
+          >
+            GitHub
+          </a>
           <LanguageToggle />
           <ThemeToggle />
         </div>

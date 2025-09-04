@@ -23,15 +23,18 @@ const Hero = () => {
   return (
     <Section aria-labelledby="hero-heading">
       <div className="space-y-4 max-w-prose">
-        <h1 id="hero-heading" className="text-4xl font-semibold tracking-tight">
+        <h1
+          id="hero-heading"
+          className="text-5xl sm:text-6xl font-bold tracking-tight bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--accent))] bg-clip-text text-transparent"
+        >
           {t("heroTitle")}
         </h1>
         <p className="text-lg text-[hsl(var(--color-muted))]">
           {t("heroSubtitle")}
         </p>
         <CTAButtons
-          primary={{ label: t("viewProjects"), href: "/projects" }}
-          secondary={{ label: t("downloadCV"), href: "/cv.pdf" }}
+          primary={{ label: t("hireMe"), href: "/#contact" }}
+          secondary={{ label: t("viewCaseStudies"), href: "/#case-studies" }}
         />
       </div>
       <section
