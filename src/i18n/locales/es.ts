@@ -1,5 +1,5 @@
 export const es = {
-  heroTitle: "Backends que salen a producción en días.",
+  heroTitle: "Joaquin Minatel",
   heroSubtitle:
     "APIs seguras, Postgres y deploys. UTC−3, disponibilidad 30+ h/sem.",
   hireMe: "Contrátame",

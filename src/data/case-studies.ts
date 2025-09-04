@@ -8,7 +8,7 @@ export interface CaseStudy {
   problem: LocalizedText;
   solution: LocalizedText;
   impact: LocalizedText;
-  stack: string;
+  stack: string[];
   repo: string;
 }
 
@@ -30,7 +30,7 @@ export const caseStudies: CaseStudy[] = [
       en: "Saved many man‑hours daily, handling 20k+ invoices/year under $500 API cost.",
       es: "Ahorra muchas horas/día, procesando 20k+ facturas/año por <USD500 en API.",
     },
-    stack: "Redis · Oracle · Docker · Python · Next.js",
+    stack: ["Redis", "Oracle", "Docker", "Python", "Next.js"],
     repo: "https://github.com/joacominatel/escaneo-facturas-scratch",
   },
   {
@@ -47,7 +47,7 @@ export const caseStudies: CaseStudy[] = [
       en: "Provided live hardware insight and timely notifications.",
       es: "Brindó visibilidad al hardware y alertas oportunas.",
     },
-    stack: "Go · HTML/CSS/JS",
+    stack: ["Go", "HTML", "CSS", "JavaScript"],
     repo: "https://github.com/joacominatel/server-monitoring-go",
   },
   {
@@ -64,7 +64,7 @@ export const caseStudies: CaseStudy[] = [
       en: "Ensured every backup was tracked and auditable.",
       es: "Aseguró que cada backup quedara registrado y auditable.",
     },
-    stack: "JavaScript · Notion API · SMTP",
+    stack: ["JavaScript", "Notion API", "SMTP"],
     repo: "mailto:joacominatel@gmail.com?subject=Notion%20Backup%20Tracker%20demo",
   },
 ];
