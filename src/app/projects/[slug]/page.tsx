@@ -1,17 +1,22 @@
-import { notFound } from "next/navigation";
-import { projects, type Project } from "@/data/projects";
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+
 import ProjectDetailClient from "@/components/projects/ProjectDetailClient";
+import { type Project, projects } from "@/data/projects";
 
-interface ParamsPromise { params: Promise<{ slug: string }> }
-
-export function generateStaticParams() {
-  return projects.map(p => ({ slug: p.slug }));
+interface ParamsPromise {
+  params: Promise<{ slug: string }>;
 }
 
-export async function generateMetadata({ params }: ParamsPromise): Promise<Metadata> {
+export function generateStaticParams() {
+  return projects.map((p) => ({ slug: p.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: ParamsPromise): Promise<Metadata> {
   const { slug } = await params;
-  const project = projects.find(p => p.slug === slug);
+  const project = projects.find((p) => p.slug === slug);
   if (!project) return {};
   return {
     title: `${project.title.en} | Project`,
@@ -21,7 +26,7 @@ export async function generateMetadata({ params }: ParamsPromise): Promise<Metad
 
 export default async function ProjectDetailPage({ params }: ParamsPromise) {
   const { slug } = await params;
-  const project = projects.find(p => p.slug === slug) as Project | undefined;
+  const project = projects.find((p) => p.slug === slug) as Project | undefined;
   if (!project) notFound();
   return <ProjectDetailClient project={project} />;
 }

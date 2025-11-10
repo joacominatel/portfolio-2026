@@ -3,6 +3,11 @@ export interface LocalizedText {
   es: string;
 }
 
+export interface ProjectHighlight {
+  label: LocalizedText;
+  colorClass: string;
+}
+
 export interface Project {
   slug: string;
   title: LocalizedText;
@@ -14,6 +19,7 @@ export interface Project {
   status?: "developing" | "archived" | "active";
   tags: string[];
   story: LocalizedText; // longer narrative
+  highlight?: ProjectHighlight;
 }
 
 export const projects: Project[] = [
@@ -37,21 +43,21 @@ export const projects: Project[] = [
     status: "active",
     tags: ["ocr", "ai", "flask", "celery", "redis", "openapi"],
     story: {
-  en: `This project started after repeatedly seeing small teams waste hours manually re-typing invoice data. The idea: treat invoices like streaming events—ingest, extract, validate, confirm.
+      en: `This project started after repeatedly seeing small teams waste hours manually re-typing invoice data. The idea: treat invoices like streaming events—ingest, extract, validate, confirm.
 
 I chose a decoupled architecture: Flask API handles fast request/response; Celery workers perform OCR (Tesseract) and structured field extraction using OpenAI; Redis acts as broker + ephemeral cache; MariaDB stores canonical invoice states and transitions. WebSockets broadcast status changes so users get immediate feedback.
 
 The challenge was balancing determinism (for auditing) with probabilistic extraction (LLM). The solution: store raw OCR, model prompts, and extracted fields with version markers so improvements never silently mutate historical data. OpenAPI-first design kept clients stable while internals evolved.
 
 Result: a pipeline that shortens validation loops and creates a foundation for analytics (processing latency, field accuracy, retry rates).`,
-  es: `Este proyecto nació tras ver equipos pequeños perder horas tipeando datos de facturas. La idea: tratar las facturas como eventos—ingestar, extraer, validar, confirmar.
+      es: `Este proyecto nació tras ver equipos pequeños perder horas tipeando datos de facturas. La idea: tratar las facturas como eventos—ingestar, extraer, validar, confirmar.
 
 Arquitectura desacoplada: API Flask para requests rápidos; workers Celery para OCR (Tesseract) y extracción estructurada con OpenAI; Redis como broker + caché efímero; MariaDB como fuente canónica de estados. WebSockets emiten cambios para feedback inmediato.
 
 El reto: equilibrar determinismo (auditoría) con extracción probabilística (LLM). Solución: guardar OCR crudo, prompts y campos extraídos con versiones para que mejoras no muten datos históricos. Diseño OpenAPI-first mantuvo clientes estables mientras la interna evolucionaba.
 
-Resultado: pipeline que reduce tiempos de validación y crea base para analíticas (latencia, exactitud de campos, tasa de reintentos).`
-    }
+Resultado: pipeline que reduce tiempos de validación y crea base para analíticas (latencia, exactitud de campos, tasa de reintentos).`,
+    },
   },
   {
     slug: "server-monitoring-go",
@@ -73,49 +79,57 @@ Resultado: pipeline que reduce tiempos de validación y crea base para analític
     status: "active",
     tags: ["go", "metrics", "simulator", "alerts"],
     story: {
-  en: `I needed a way to validate alert logic without spinning real servers or faking one metric at a time. This simulator produces correlated CPU, memory, disk, network and process signals across multiple virtual hosts.
+      en: `I needed a way to validate alert logic without spinning real servers or faking one metric at a time. This simulator produces correlated CPU, memory, disk, network and process signals across multiple virtual hosts.
 
 Core: a Go loop that emits JSON metric frames to a REST API at configurable intervals. A stress mode selectively drives a chosen metric (e.g. cpu>95%) to test threshold creation & notification jitter. Automatic threshold provisioning helps experiment quickly.
 
 Outcome: faster feedback for dashboard & alert tuning plus a reproducible load profile to compare ingestion pipeline optimizations.`,
-  es: `Necesitaba validar lógica de alertas sin levantar servidores reales ni falsificar métricas aisladas. El simulador genera señales correlacionadas (CPU, memoria, disco, red, procesos) en varios hosts virtuales.
+      es: `Necesitaba validar lógica de alertas sin levantar servidores reales ni falsificar métricas aisladas. El simulador genera señales correlacionadas (CPU, memoria, disco, red, procesos) en varios hosts virtuales.
 
 Núcleo: un loop en Go que emite frames JSON a una API REST con intervalos configurables. Un modo de estrés fuerza una métrica (ej. cpu>95%) para probar umbrales y jitter de notificaciones. La creación automática de umbrales acelera la experimentación.
 
-Resultado: feedback más rápido para ajustar dashboards y alertas, más un perfil de carga reproducible para comparar optimizaciones de ingesta.`
-    }
+Resultado: feedback más rápido para ajustar dashboards y alertas, más un perfil de carga reproducible para comparar optimizaciones de ingesta.`,
+    },
   },
   {
-    slug: "truco-arg",
+    slug: "fastapi-sqlalchemy-template",
     title: {
-      en: "Argentinian Truco Engine & Monorepo",
-      es: "Monorepo Motor de Truco Argentino",
+      en: "FastAPI Async SQLAlchemy Template",
+      es: "Plantilla FastAPI Async SQLAlchemy",
     },
-    role: "Engine / Game Logic",
-    stack: "TypeScript · Deterministic FSM · Next.js (planned)",
-    repo: "https://github.com/joacominatel/truco-arg",
+    role: "Template Author / Backend Lead",
+    stack:
+      "FastAPI · Async SQLAlchemy · Alembic · Docker · Postgres · Redis · OpenTelemetry",
+    repo: "https://github.com/joacominatel/fastapi_sqlalchemy_template",
     shortDescription: {
-      en: "Deterministic card game engine (event sourced) – still in early development.",
-      es: "Motor determinista de truco (event sourced) – en desarrollo temprano.",
+      en: "Production-ready FastAPI starter with Docker, async SQLAlchemy and observability wired in.",
+      es: "Starter de FastAPI listo para producción con Docker, SQLAlchemy async y observabilidad integrada.",
     },
     goal: {
-      en: "Provide a replayable, strict rules engine for Truco with seed‑based determinism.",
-      es: "Proveer un motor reproducible con reglas estrictas y determinismo por semilla.",
+      en: "Let backend teams ship scalable APIs fast with DDD boundaries, migrations and monitoring out of the box.",
+      es: "Permitir que equipos backend lancen APIs escalables con DDD, migraciones y monitoreo listo desde el día uno.",
     },
-    status: "developing",
-    tags: ["game-engine", "deterministic", "fsm", "typescript"],
+    status: "active",
+    tags: ["fastapi", "sqlalchemy", "ddd", "template", "alembic", "docker"],
+    highlight: {
+      label: {
+        en: "New Template",
+        es: "Nueva Plantilla",
+      },
+      colorClass: "bg-amber-300/70 text-slate-900 border border-amber-400/60",
+    },
     story: {
-  en: `Origin: curiosity about modeling complex bidding + trick-taking flow with full determinism. Design goals: pure engine (no IO), event-sourced state rebuild, reproducible shuffles via seed, and masking per player view.
+      en: `Reusable foundation for backend teams that want the first sprint done before writing business code. The template spins up with Docker Compose and delivers a FastAPI stack wired through async SQLAlchemy, Alembic migrations, Redis, and Postgres. Logging, metrics, and tracing are turned on by default with Loguru + OpenTelemetry so incidents surface quickly.
 
-Early focus: correctness invariants (card hierarchy, turn rotation, scoring) and expressive finite state machines for calls (truco / envido / flor chain). Next steps: persistence layer + spectator view.
+Architecture follows Domain-Driven Design: each domain packages models, schemas, repositories, services, and routers. The router loader discovers new domains automatically, so adding features is just scaffolding a folder. Settings auto-detect the environment, inject versioning via Hatch-VCS, and expose app health metadata at /api/health.
 
-Still evolving — tracking clarity over feature breadth.`,
-  es: `Origen: curiosidad por modelar flujo de cantos + bazas con determinismo total. Objetivos: motor puro (sin IO), reconstrucción event-sourced, repartos reproducibles por semilla y masking de vista por jugador.
+Why it matters: teams bootstrap faster, enforce clean boundaries, and get CI-ready workflows (lint, format, coverage) without reinventing the wheel. It is my go-to accelerator when spinning new services or coaching teams on modern Python backends.`,
+      es: `Base reutilizable para equipos backend que quieren el primer sprint resuelto antes de escribir negocio. La plantilla se levanta con Docker Compose y entrega un stack FastAPI conectado con SQLAlchemy asíncrono, migraciones Alembic, Redis y Postgres. Logging, métricas y trazas vienen activadas con Loguru + OpenTelemetry para detectar incidentes rápido.
 
-Enfoque inicial: invariantes de corrección (jerarquía, rotación, puntaje) y FSM expresivas para cantos (truco / envido / flor). Próximo: persistencia + vista espectador.
+La arquitectura sigue Domain-Driven Design: cada dominio empaqueta modelos, esquemas, repositorios, servicios y routers. El cargador de routers descubre nuevos dominios automáticamente, así que sumar features es crear la carpeta correcta. Las settings autodetectan el entorno, inyectan versionado con Hatch-VCS y exponen metadata de salud en /api/health.
 
-Sigue en evolución — priorizando claridad sobre amplitud de features.`
-    }
+Por qué importa: los equipos arrancan más rápido, mantienen límites claros y obtienen workflows listos para CI (lint, format, coverage) sin reinventar nada. Es mi acelerador favorito al iniciar servicios nuevos o al acompañar equipos en backends modernos con Python.`,
+    },
   },
   {
     slug: "data-orchestrator",
@@ -134,9 +148,8 @@ Sigue en evolución — priorizando claridad sobre amplitud de features.`
     status: "active",
     tags: ["etl", "workers", "queues"],
     story: {
-  en: "Placeholder project: intended to showcase composable task graphs, retries and idempotent sinks.",
-  es: "Proyecto placeholder: pensado para mostrar grafos de tareas componibles, reintentos e idempotencia en sinks.",
-    }
+      en: "Placeholder project: intended to showcase composable task graphs, retries and idempotent sinks.",
+      es: "Proyecto placeholder: pensado para mostrar grafos de tareas componibles, reintentos e idempotencia en sinks.",
+    },
   },
 ];
-

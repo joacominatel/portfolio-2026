@@ -64,10 +64,20 @@ export const careers: CareerEntry[] = [
           es: "Automatización y extracción de datos clave de facturas para múltiples países.",
           en: "Automation & extraction of key invoice fields for multiple countries.",
         },
-        technologies: ["OpenAI", "Next.js", "Socket.IO", "Docker", "Redis", "SQL Server"],
+        technologies: [
+          "OpenAI",
+          "Next.js",
+          "Socket.IO",
+          "Docker",
+          "Redis",
+          "SQL Server",
+        ],
       },
       {
-        name: { es: "Automatización y registro de backups", en: "Backup automation & logging" },
+        name: {
+          es: "Automatización y registro de backups",
+          en: "Backup automation & logging",
+        },
         description: {
           es: "Registro centralizado de inicios y finales de backups vía API y dashboard móvil.",
           en: "Central API logging start/end of backups with mobile dashboard (Notion).",
@@ -94,7 +104,16 @@ export const careers: CareerEntry[] = [
       es: "Diseñé APIs con Flask y Django, desarrollé soluciones personalizadas para clientes y trabajé de forma autónoma en proyectos adaptados a necesidades específicas.",
       en: "Designed APIs with Flask & Django, built tailored solutions, and worked autonomously on client-focused software projects.",
     },
-    technologies: ["Python", "Flask", "Django", "API", "Next.js", "PHP", "Laravel", "SQL"],
+    technologies: [
+      "Python",
+      "Flask",
+      "Django",
+      "API",
+      "Next.js",
+      "PHP",
+      "Laravel",
+      "SQL",
+    ],
     start: "2021-03-01",
     end: null,
     achievements: undefined,
@@ -105,6 +124,8 @@ export const careers: CareerEntry[] = [
 ];
 
 // Ensure newest first by default if consumed directly
-careers.sort((a, b) => new Date(b.start).getTime() - new Date(a.start).getTime());
+careers.sort(
+  (a, b) => new Date(b.start).getTime() - new Date(a.start).getTime(),
+);
 
 export default careers;
