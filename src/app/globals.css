@@ -28,12 +28,20 @@
   --border: 222 14% 20%;
 }
 
-html { scroll-behavior: smooth; }
-body { min-height: 100%; }
-
-@layer utilities {
-  .text-muted { color: hsl(var(--color-muted)); }
+html {
+  scroll-behavior: smooth;
 }
 
-* { outline-color: hsl(var(--primary)); }
+body {
+  min-height: 100%;
+}
 
+@layer utilities {
+  .text-muted {
+    color: hsl(var(--color-muted));
+  }
+}
+
+* {
+  outline-color: hsl(var(--primary));
+}
