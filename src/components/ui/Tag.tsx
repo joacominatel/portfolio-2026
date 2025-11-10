@@ -10,18 +10,22 @@ const variants = [
 
 function pickVariant(label: string) {
   let hash = 0;
-  for (let i = 0; i < label.length; i++) hash = (hash * 31 + label.charCodeAt(i)) >>> 0;
+  for (let i = 0; i < label.length; i++)
+    hash = (hash * 31 + label.charCodeAt(i)) >>> 0;
   return variants[hash % variants.length];
 }
 
-export const Tag: React.FC<{ label: string; className?: string }> = ({ label, className }) => {
+export const Tag: React.FC<{ label: string; className?: string }> = ({
+  label,
+  className,
+}) => {
   const base = pickVariant(label.toLowerCase());
   return (
     <span
       className={cn(
         "inline-flex items-center rounded-full border px-2 py-0.5 text-[10px] font-medium tracking-wide uppercase text-[hsl(var(--color-fg))]",
         base,
-        className
+        className,
       )}
     >
       {label}

@@ -17,7 +17,7 @@ export const Prose: React.FC<ProseProps> = ({ className, ...props }) => (
       "dark:[&_code]:bg-[hsl(var(--accent)/0.25)]",
       // links
       "[&_a]:text-[hsl(var(--primary))] [&_a]:underline-offset-2 [&_a]:decoration-[hsl(var(--primary))] hover:[&_a]:underline",
-      className
+      className,
     )}
     {...props}
   />
