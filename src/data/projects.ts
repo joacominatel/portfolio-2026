@@ -24,6 +24,52 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    slug: "pulse",
+    title: {
+      en: "Pulse",
+      es: "Pulse",
+    },
+    role: "Creator / Backend",
+    stack: "Go · Echo · PostgreSQL · Redis · Supabase",
+    repo: "https://github.com/joacominatel/pulse",
+    shortDescription: {
+      en: "Real-time discovery engine surfacing emerging communities based on live momentum signals.",
+      es: "Motor de descubrimiento en tiempo real que destaca comunidades emergentes basado en momentum.",
+    },
+    goal: {
+      en: "Detect what's gaining attention right now using rate of change instead of absolute size.",
+      es: "Detectar qué está ganando atención ahora mismo usando tasa de cambio en lugar de tamaño absoluto.",
+    },
+    status: "active",
+    tags: ["go", "redis", "postgresql", "system-design", "backend"],
+    story: {
+      en: `Pulse detects what's gaining attention right now — not what's already popular. It's built around a simple idea: the most interesting communities are often the ones just starting to spike, not the ones that are already large.
+
+Think of it like a seismograph for community activity. When a community suddenly gets more engagement than usual, Pulse notices and ranks it higher.
+
+How it works:
+1. Events come in (joins, posts, views)
+2. Events are weighted (a "join" has more impact than a "view")
+3. Momentum is calculated (sum of weighted events in a sliding time window)
+4. Rankings are cached (Redis sorted set for sub-millisecond reads)
+5. Feed is served (Communities ordered by current momentum)
+
+Stack: Go + Echo for the API, PostgreSQL for reliable storage, Redis for the leaderboard, and Supabase for Auth.`,
+      es: `Pulse detecta qué está ganando atención ahora mismo — no lo que ya es popular. Se basa en una idea simple: las comunidades más interesantes suelen ser las que recién empiezan a despuntar, no las que ya son enormes.
+
+Piénsalo como un sismógrafo de actividad comunitaria. Cuando una comunidad recibe de repente más engagement de lo habitual, Pulse lo nota y la rankea más alto.
+
+Cómo funciona:
+1. Llegan eventos (joins, posts, views)
+2. Se ponderan los eventos (un "join" impacta más que un "view")
+3. Se calcula el momentum (suma de eventos ponderados en una ventana de tiempo deslizante)
+4. Se cachean los rankings (Redis sorted set para lecturas sub-milisegundo)
+5. Se sirve el feed (Comunidades ordenadas por momentum actual)
+
+Stack: Go + Echo para la API, PostgreSQL para almacenamiento confiable, Redis para el leaderboard y Supabase para Auth.`,
+    },
+  },
+  {
     slug: "escaneo-facturas",
     title: {
       en: "Automated Invoice Processing System",
@@ -57,38 +103,6 @@ Arquitectura desacoplada: API Flask para requests rápidos; workers Celery para 
 El reto: equilibrar determinismo (auditoría) con extracción probabilística (LLM). Solución: guardar OCR crudo, prompts y campos extraídos con versiones para que mejoras no muten datos históricos. Diseño OpenAPI-first mantuvo clientes estables mientras la interna evolucionaba.
 
 Resultado: pipeline que reduce tiempos de validación y crea base para analíticas (latencia, exactitud de campos, tasa de reintentos).`,
-    },
-  },
-  {
-    slug: "server-monitoring-go",
-    title: {
-      en: "Server Metrics Simulation & Monitoring",
-      es: "Simulador y Monitoreo de Métricas de Servidor",
-    },
-    role: "Backend",
-    stack: "Go · REST · JSON · CLI",
-    repo: "https://github.com/joacominatel/server-monitoring-go",
-    shortDescription: {
-      en: "Generates realistic multi‑server metrics to test monitoring & alert pipelines.",
-      es: "Genera métricas realistas multi‑servidor para probar monitoreo y alertas.",
-    },
-    goal: {
-      en: "Stress and validate alert thresholds & ingestion flows with controllable synthetic load.",
-      es: "Estresar y validar umbrales de alertas y flujos de ingesta con carga sintética controlable.",
-    },
-    status: "active",
-    tags: ["go", "metrics", "simulator", "alerts"],
-    story: {
-      en: `I needed a way to validate alert logic without spinning real servers or faking one metric at a time. This simulator produces correlated CPU, memory, disk, network and process signals across multiple virtual hosts.
-
-Core: a Go loop that emits JSON metric frames to a REST API at configurable intervals. A stress mode selectively drives a chosen metric (e.g. cpu>95%) to test threshold creation & notification jitter. Automatic threshold provisioning helps experiment quickly.
-
-Outcome: faster feedback for dashboard & alert tuning plus a reproducible load profile to compare ingestion pipeline optimizations.`,
-      es: `Necesitaba validar lógica de alertas sin levantar servidores reales ni falsificar métricas aisladas. El simulador genera señales correlacionadas (CPU, memoria, disco, red, procesos) en varios hosts virtuales.
-
-Núcleo: un loop en Go que emite frames JSON a una API REST con intervalos configurables. Un modo de estrés fuerza una métrica (ej. cpu>95%) para probar umbrales y jitter de notificaciones. La creación automática de umbrales acelera la experimentación.
-
-Resultado: feedback más rápido para ajustar dashboards y alertas, más un perfil de carga reproducible para comparar optimizaciones de ingesta.`,
     },
   },
   {

@@ -71,7 +71,7 @@ const ExperienceTimeline: FC = () => {
                 {idx < careers.length - 1 && <TimelineConnector />}
               </TimelineSeparator>
               <TimelineContent sx={{ py: 0, my: 0 }}>
-                <div className="pb-8 last:pb-0">
+                <div className="pb-12 last:pb-0">
                   <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
                     <h3 className="font-medium tracking-tight text-sm sm:text-base">
                       {c.position[locale]}{" "}

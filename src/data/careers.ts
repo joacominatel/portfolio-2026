@@ -21,6 +21,27 @@ export const careers: CareerEntry[] = [
   {
     company: "Dentsu",
     position: {
+      en: "Backend Developer",
+      es: "Backend Developer",
+    },
+    description: {
+      es: "Desarrollo y mantenimiento de servicios backend escalables. Diseño de APIs RESTful y optimización de bases de datos. Colaboración con equipos frontend y de producto para entregar soluciones robustas.",
+      en: "Development and maintenance of scalable backend services. Design of RESTful APIs and database optimization.",
+    },
+    technologies: [
+      "Go",
+      "Python",
+      "SQL",
+      "Docker",
+      "API Design",
+      "Git",
+    ],
+    start: "2024-08-01",
+    end: null,
+  },
+  {
+    company: "Dentsu",
+    position: {
       en: "Service Operations Analyst",
       es: "Service Operations Analyst",
     },
@@ -40,7 +61,7 @@ export const careers: CareerEntry[] = [
       "Inventory",
     ],
     start: "2023-05-15",
-    end: null,
+    end: "2024-08-01",
     achievements: {
       es: [
         "Automatización de tareas de gestión y backups",
